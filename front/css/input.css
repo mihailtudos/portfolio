@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { 
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.logo .last_name {
+    -webkit-text-stroke: none;
+    background-color: #0996cf;
+    padding: .5rem;
+}
+
+.logo .first_name {
+    -webkit-text-stroke: 1px black;
+    background-color: transparent;
+    color: white;
+    padding: 0;
+}
+
+.logo:hover .first_name {
+    -webkit-text-stroke: 0px transparent;
+    background-color: #0996cf;
+    padding: .5rem;
+}
+
+.logo:hover .last_name {
+    -webkit-text-stroke: 1px black;
+    background-color: transparent;
+    color: white;
+    padding: 0;
+}
