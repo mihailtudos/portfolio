@@ -1,0 +1,69 @@
+{{ define "title"}} Articles {{ end }}
+
+{{ define "content" }}
+    <section class="container flex flex-col gap-2 mx-auto justify-center items-center min-h-[60vh] lg:mt-20 mt-8">
+        <h1 class="capitalize text-lg text-gray-500">Get to know me</h1>
+        <h2 class="text-5xl text-black font-bold capitalize">About me</h2>
+        <div class="flex lg:flex-row flex-col gap-6 justify-center items-center lg:mt-20 mt-4 px-6">
+            <img src="/static/img/me1.png" alt="Mihail Tudos main photo" class="lg:w-[400px] w-[200px] rounded-[20px] shadow-md">
+            <div class="flex flex-col gap-6">
+                <div class="flex gap-6">
+                    <div class="border-2 border-gray-700 py-4 px-12 rounded-[20px] text-center flex-1">
+                        <svg class="w-10 h-10 mx-auto" data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path clip-rule="evenodd" fill-rule="evenodd" d="M5.166 2.621v.858c-1.035.148-2.059.33-3.071.543a.75.75 0 0 0-.584.859 6.753 6.753 0 0 0 6.138 5.6 6.73 6.73 0 0 0 2.743 1.346A6.707 6.707 0 0 1 9.279 15H8.54c-1.036 0-1.875.84-1.875 1.875V19.5h-.75a2.25 2.25 0 0 0-2.25 2.25c0 .414.336.75.75.75h15a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-2.25-2.25h-.75v-2.625c0-1.036-.84-1.875-1.875-1.875h-.739a6.706 6.706 0 0 1-1.112-3.173 6.73 6.73 0 0 0 2.743-1.347 6.753 6.753 0 0 0 6.139-5.6.75.75 0 0 0-.585-.858 47.077 47.077 0 0 0-3.07-.543V2.62a.75.75 0 0 0-.658-.744 49.22 49.22 0 0 0-6.093-.377c-2.063 0-4.096.128-6.093.377a.75.75 0 0 0-.657.744Zm0 2.629c0 1.196.312 2.32.857 3.294A5.266 5.266 0 0 1 3.16 5.337a45.6 45.6 0 0 1 2.006-.343v.256Zm13.5 0v-.256c.674.1 1.343.214 2.006.343a5.265 5.265 0 0 1-2.863 3.207 6.72 6.72 0 0 0 .857-3.294Z"></path>
+                        </svg>
+                        <p class="font-bold text-lg">Experience</p>
+                        <p class="text-gray-500">2+ years</p>
+                        <p class="text-gray-500">Full-Stack Developemnt</p>
+                    </div>
+                    <div class="border-2 border-gray-700 py-4 px-12 rounded-[20px] text-center flex-1">
+                        <svg class="w-10 h-10 mx-auto" data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002c-.114.06-.227.119-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z"></path>
+                            <path d="M13.06 15.473a48.45 48.45 0 0 1 7.666-3.282c.134 1.414.22 2.843.255 4.284a.75.75 0 0 1-.46.711 47.87 47.87 0 0 0-8.105 4.342.75.75 0 0 1-.832 0 47.87 47.87 0 0 0-8.104-4.342.75.75 0 0 1-.461-.71c.035-1.442.121-2.87.255-4.286.921.304 1.83.634 2.726.99v1.27a1.5 1.5 0 0 0-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.66a6.727 6.727 0 0 0 .551-1.607 1.5 1.5 0 0 0 .14-2.67v-.645a48.549 48.549 0 0 1 3.44 1.667 2.25 2.25 0 0 0 2.12 0Z"></path>
+                            <path d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z"></path>
+                          </svg>
+                        <p class="font-bold text-lg">Education</p>
+                        <p class="text-gray-500">BSc in Computing Technologies</p>
+                        <p class="text-gray-500">with 1st Class Honours</p>
+                    </div>
+                </div>
+                <article class="text-center">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum nobis voluptates vel commodi ad recusandae labore, autem impedit, adipisci, quis eos laborum consequuntur eaque! Illum rem officia iusto quis obcaecati!</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum nobis voluptates vel commodi ad recusandae labore, autem impedit, adipisci, quis eos laborum consequuntur eaque! Illum rem officia iusto quis obcaecati!</p>
+                </article>
+            </div>
+        </div>
+
+        <div class="my-20 text-center">
+            <h2 class="capitalize text-lg text-gray-500 capitalize">Get in Touch</h2>
+            <h3 class="text-5xl text-black font-bold capitalize">contact me</h3>
+
+            <div class="rounded-full border-2 border-gray-700 p-3 mx-auto mt-6">
+                <ul class="flex gap-4">
+                    <li class="hover:underline hover:text-main">
+                        <a href="mailto:mihailtudos9@gmail.com" class="flex items-center gap-2">
+                            <span class="bg-gray-secondary p-2 rounded-full flex items-center justify-center">
+                                <svg class="text-white w-8 h-8" data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"></path>
+                                    <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"></path>
+                                </svg>
+                            </span>
+                            Email me
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:mihailtudos9@gmail.com" class="flex items-center gap-2">
+                            <span class="bg-gray-secondary p-2 rounded-full flex items-center justify-center">
+                                <svg class="text-white w-8 h-8" data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"></path>
+                                    <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"></path>
+                                </svg>
+                            </span>
+                            Email me
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{{ end }}

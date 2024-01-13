@@ -1,21 +1,59 @@
 {{define "nav"}}
-    <nav class="w-full border-b-2 border-gray-100 p-4">
+    <nav class="w-full py-4 lg:px-4 px-12 mt-4 lg:max-w-5xl max-w-lg mx-auto">
         <div class="flex items-center justify-between">
             <a class="text-2xl text-gray-50 font-semibold p-2 transition duration-150 ease-in-out logo" href='/'>
                 <span class="first_name duration-300">Mihail</span> 
                 <span class="last_name duration-300">Tudos</span> 
             </a>
-            <ul class="flex gap-6">
+            <ul class="lg:flex gap-6 hidden">
                 <li>
-                    <a class="text-2xl text-gray-600 p-2 hover:text-cyan-500" href="/articles">Articles</a>
+                    <a class="text-xl text-gray-secondary p-2 hover:text-main" href="/articles">Articles</a>
                 </li>
                 <li>
-                    <a class="text-2xl text-gray-600 p-2 hover:text-cyan-500" href="/contacts">Contact me</a>
+                    <a class="text-xl text-gray-secondary p-2 hover:text-main" href="/projects">Projects</a>
                 </li>
                 <li>
-                    <a class="text-2xl text-gray-600 p-2 hover:text-cyan-500" href="/about">About Me</a>
+                    <a class="text-xl text-gray-secondary p-2 hover:text-main" href="/resume">Resume</a>
                 </li>
+            </ul>
+            <div class="lg:hidden block relative">
+                <span class="cursor-pointer" onclick="toggleMenu()">
+                    <svg id="mobile-manu-open-icon" class="w-8 h-8 hover:text-main duration-300" fill="currentColor" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                        <path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"></path>
+                    </svg>
+                    <svg id="mobile-manu-close-icon" class="w-8 h-8 text-main duration-300 hover:text-gray-secondary hidden" fill="currentColor" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                        <path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"></path>
+                    </svg>
+                </span>
+                <ul id="mobile-navlinks" class="hidden absolute top-10 right-5 w-fit text-center whitespace-nowrap space-y-2 shadow-md bg-white rounded-lg p-2">
+                    <li>
+                        <a class="text-2xl text-gray-secondary p-2 hover:text-main" href="/articles">Articles</a>
+                    </li>
+                    <li>
+                        <a class="text-2xl text-gray-secondary p-2 hover:text-main" href="/projects">Projects</a>
+                    </li>
+                    <li>
+                        <a class="text-2xl text-gray-secondary p-2 hover:text-main" href="/resume">Resume</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 {{end}}
+
+{{ define "js"}}
+    <script type="text/javascript">
+        function toggleMenu() {
+            event.preventDefault();
+            const links = document.getElementById('mobile-navlinks');
+            const openMenuIcon = document.getElementById('mobile-manu-open-icon');
+            const closeMenuIcon = document.getElementById('mobile-manu-close-icon');
+
+            if (links && closeMenuIcon && openMenuIcon) {
+                links.classList.toggle('hidden');
+                openMenuIcon.classList.toggle('hidden');
+                closeMenuIcon.classList.toggle('hidden');
+            }
+        }
+    </script>
+{{ end }}

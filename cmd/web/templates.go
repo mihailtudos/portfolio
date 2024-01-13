@@ -3,7 +3,7 @@ package main
 import (
 	"html/template"
 	"io/fs"
-	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/mihailtudos/portfolio/ui"
@@ -27,13 +27,12 @@ func newTemplateCache() (map[string]*template.Template, error) {
 	// gives us a slice of all the 'page' templates for the application, just
 	// like before.
 	pages, err := fs.Glob(ui.Files, "html/pages/**/*.go.html")
-
 	if err != nil {
 		return nil, err
 	}
 
 	for _, page := range pages {
-		name := filepath.Base(page)
+		name := strings.TrimPrefix(page, "html/pages/")
 		// Create a slice containing the filepath patterns for the templates we
 		// want to parse.
 
