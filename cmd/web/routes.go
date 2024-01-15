@@ -14,6 +14,8 @@ func (app *application) routes() http.Handler {
 	router.HandlerFunc(http.MethodGet, "/articles", app.articles)
 	router.HandlerFunc(http.MethodGet, "/projects", app.projects)
 	router.HandlerFunc(http.MethodGet, "/resume", app.resume)
+
+	router.HandlerFunc(http.MethodPost, "/articles", app.storeArticle)
 	fileServer := http.FileServer(http.FS(ui.Files))
 
 	router.Handler(http.MethodGet, "/static/*filepath", fileServer)

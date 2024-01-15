@@ -3,15 +3,34 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"log/slog"
 	"net/http"
 )
+
+func (app *application) serverError(w http.ResponseWriter, r *http.Request, err error) {
+	var (
+		method = r.Method
+		uri    = r.URL.RequestURI()
+	)
+
+	app.logger.Error(err.Error(), slog.String("method", method), slog.String("uri", uri))
+	http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+}
+
+func (app *application) clientError(w http.ResponseWriter, status int) {
+	http.Error(w, http.StatusText(status), status)
+}
+
+func (app *application) notFound(w http.ResponseWriter, status int) {
+	app.clientError(w, http.StatusNotFound)
+}
 
 func (app *application) render(w http.ResponseWriter, r *http.Request, status int, page string, data templateData) {
 	ts, ok := app.templateCache[page]
 	if !ok {
 		err := fmt.Errorf("the template %s does not exist", page)
 		fmt.Println(err)
-		// app.serverError(w, r, err)
+		app.serverError(w, r, err)
 		return
 	}
 	// Initialize a new buffer.
@@ -23,7 +42,7 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, status in
 	if err != nil {
 		fmt.Println(err)
 
-		// app.serverError(w, r, err)
+		app.serverError(w, r, err)
 		return
 	}
 	// If the template is written to the buffer without any errors, we are safe
