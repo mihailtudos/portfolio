@@ -1,0 +1,16 @@
+{{ define "title"}} Articles {{ end }}
+
+{{ define "content" }}
+    {{ with .Data }}
+        <section class="container max-w-lg mx-auto min-h-[60vh] py-12">
+            <h1 class="capitalize text-4xl text-gray-700 font-bold">{{ .article.Title }}</h1>
+            <p class="text-gray-400 font-bold my-4">Published on: {{ humanDate .article.CreatedAt }}</p>
+            {{ .article.Content }}
+        </section>
+    {{else}} 
+        <section class="container max-w-lg mx-auto min-h-[60vh] py-12">
+            <h1 class="capitalize text-4xl text-gray-700 font-bold">We are sorry 😔!</h1>
+            <p class="text-gray-400 font-bold my-4">The content of this page is not available at the moment, please try again later.</p>
+        </section>
+    {{ end }}
+{{ end }}

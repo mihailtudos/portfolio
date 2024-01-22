@@ -9,7 +9,7 @@ build-image:
 	docker build -t $(IMAGE_NAME):$(VERSION) .
 
 postgres-up:
-	docker compose up
+	docker compose up -d
 
 postgres-down:
 	docker compose down

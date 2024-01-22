@@ -1,6 +1,36 @@
-{{define "title"}} Contact {{end}}
+{{define "title"}} Projects {{end}}
 
 {{define "content" }}
-    <h1>Latest Snippets</h1>
-    <p>There's nothing to see here yet!</p>
+<section class="container flex flex-col gap-2 mx-auto justify-center items-center min-h-[60vh] lg:mt-12 mt-8">
+    <h1 class="capitalize text-lg text-gray-500">Browse my projects</h1>
+    <h2 class="text-5xl text-black font-bold capitalize">Projects</h2>
+    <div class="grid lg:grid-cols-3 gap-6 lg:mt-20 mt-4 px-6">
+        <div class="border-2 border-gray-900 rounded-[30px] shadow-md px-8 py-4"> 
+            <img src="/static/img/project-1.png" class="object-contain rounded-[20px]" alt="Project 1">
+            <p class="text-center text-3xl font-bold py-2">Project one</p>
+            <div class="flex justify-center items-center gap-6">
+                <button class="rounded-full flex-1 p-4 px-6 text-sm font-bold text-gray-900 border-2 border-gray-900 duration-300 hover:border-transparent hover:bg-main hover:text-white">Github</button>
+                <button class="rounded-full flex-1 p-4 px-6 text-sm font-bold text-gray-900 border-2 border-gray-900 duration-300 hover:border-transparent hover:bg-main hover:text-white">Live Demo</button>
+            </div>
+        </div>
+        <div class="border-2 border-gray-900 rounded-[30px] shadow-md px-8 py-4"> 
+            <img src="/static/img/project-2.png" class="object-contain rounded-[20px]" alt="Project 1">
+            <p class="text-center text-3xl font-bold py-2">Project two</p>
+            <div class="flex justify-center items-center gap-6">
+                <button class="rounded-full flex-1 p-4 px-6 text-sm font-bold text-gray-900 border-2 border-gray-900 duration-300 hover:border-transparent hover:bg-main hover:text-white">Github</button>
+                <button class="rounded-full flex-1 p-4 px-6 text-sm font-bold text-gray-900 border-2 border-gray-900 duration-300 hover:border-transparent hover:bg-main hover:text-white">Live Demo</button>
+            </div>
+        </div>
+        <div class="border-2 border-gray-900 rounded-[30px] shadow-md px-8 py-4"> 
+            <img src="/static/img/project-3.png" class="object-contain rounded-[20px]" alt="Project 1">
+            <p class="text-center text-3xl font-bold py-2">Project three</p>
+            <div class="flex justify-center items-center gap-6">
+                <button class="rounded-full flex-1 p-4 px-6 text-sm font-bold text-gray-900 border-2 border-gray-900 duration-300 hover:border-transparent hover:bg-main hover:text-white">Github</button>
+                <button class="rounded-full flex-1 p-4 px-6 text-sm font-bold text-gray-900 border-2 border-gray-900 duration-300 hover:border-transparent hover:bg-main hover:text-white">Live Demo</button>
+            </div>
+        </div>         
+    </div>
+
+    {{ template "contact-component" .}}
+</section>
 {{ end }}

@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	ErrRecordNotFound = errors.New("record not found")
+	ErrRecordNotFound = errors.New("models: no matching record found")
 )
 
 type Models struct {

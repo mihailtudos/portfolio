@@ -2,6 +2,9 @@
 
 {{ define "content" }}
     <section>
-        <h1>My Articles</h1>
+        {{ range .Data.articles }}
+            <h1>Title: {{ .Title }}</h1>
+            <p>Content: {{ .Content }}</p>
+        {{ end }}
     </section>
 {{ end }}
