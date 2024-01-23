@@ -13,6 +13,7 @@ import (
 type templateData struct {
 	Data        map[string]any
 	CurrentYear int
+	Form        any
 }
 
 func (app *application) newTemplateData(r *http.Request) templateData {

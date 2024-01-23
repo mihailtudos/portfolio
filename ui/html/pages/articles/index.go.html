@@ -1,10 +1,21 @@
 {{ define "title"}} Articles {{ end }}
 
 {{ define "content" }}
-    <section>
-        {{ range .Data.articles }}
-            <h1>Title: {{ .Title }}</h1>
-            <p>Content: {{ .Content }}</p>
-        {{ end }}
+    <section class="container mx-auto max-w-4xl min-h-[60vh]">
+        <h1 class="text-4xl py-6 text-gray-900 font-bold">All Articles</h1>
+
+        <ul class="space-y-4">
+            {{ range .Data.articles }}
+                <li class="flex gap-2 lg:flex-row justify-between flex-col border-b items-end">
+                    <h2 class="text-lg text-gray-700 hover:underline hover:text-main capitalize">
+                        <a href="/articles/show/{{.ID}}"> {{ .Title }}</a>
+                    </h2>
+                    <span class="text-gray-500">
+                        {{ humanDate .CreatedAt }}
+                    </span>
+                </li>
+            {{ end }}
+        </ul>
+        
     </section>
 {{ end }}

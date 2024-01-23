@@ -21,7 +21,7 @@ func (app *application) clientError(w http.ResponseWriter, status int) {
 	http.Error(w, http.StatusText(status), status)
 }
 
-func (app *application) notFound(w http.ResponseWriter, status int) {
+func (app *application) notFound(w http.ResponseWriter) {
 	app.clientError(w, http.StatusNotFound)
 }
 
@@ -45,7 +45,7 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, status in
 		app.serverError(w, r, err)
 		return
 	}
-	
+
 	// If the template is written to the buffer without any errors, we are safe
 	// to go ahead and write the HTTP status code to http.ResponseWriter.
 	w.WriteHeader(status)

@@ -14,6 +14,7 @@ import (
 
 	_ "github.com/lib/pq"
 	"github.com/mihailtudos/portfolio/internal/data"
+	"github.com/mihailtudos/portfolio/internal/services"
 )
 
 type config struct {
@@ -32,6 +33,7 @@ type application struct {
 	templateCache map[string]*template.Template
 	DB            *sql.DB
 	Models        data.Models
+	Services      services.Services
 }
 
 func main() {
@@ -62,12 +64,14 @@ func main() {
 	defer db.Close()
 
 	models := data.NewModels(db)
+	services := services.NewServices(logger)
 
 	app := &application{
 		logger:        logger,
 		templateCache: templateCache,
 		DB:            db,
 		Models:        models,
+		Services:      services,
 	}
 
 	app.logger.Info("starting server at port 8080...🔥")
